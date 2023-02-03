@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        video{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video  id="vid"  controls src="a"></video><br>
+   <input type="text"  id="inp" ><br>
+    <button onclick="go()">Go</button>
+    <button onclick="pr()">previous</button>
+    <button onclick="nex()">next</button>
+<script>
+    function go() {
+      x =   document.getElementById("inp").value;
+        v = document.getElementById("vid");
+        v.src = x;
+        console.log(x);
+    }
+    function pr() {
+      
+        v = document.getElementById("vid").src;
+        u = v.split('/');
+        r = u.length;
+        t = u[r-1];
+        console.log(v,t);
+        if(t=="a") {
+        document.getElementById("vid").src = "1.css";
+        console.log(v);
+        }
+        if(t!="a") {
+        w = v.split('/');
+        i = w.length;
+        b = w[i-1];
+        h = b.split('.');
+        s = Number(b[0]);
+        sd = s-1;
+         document.getElementById("vid").src= sd+".css";
+        console.log(v,sd);
+        }
+    }
+    function nex() {
+   
+          v = document.getElementById("vid").src;
+        u = v.split('/');
+        r = u.length;
+        t = u[r-1];
+        console.log(v,t);
+        if(t=="a") {
+        document.getElementById("vid").src = "1.css";
+        console.log(v);
+        }
+        if(t!="a") {
+        w = v.split('/');
+        i = w.length;
+        b = w[i-1];
+        h = b.split('.');
+        s = Number(b[0]);
+        sd = s+1;
+         document.getElementById("vid").src= sd+".css";
+        console.log(v,sd);
+        }
+        }
+    
+    
+    
+</script>
+</body>
+</html>
